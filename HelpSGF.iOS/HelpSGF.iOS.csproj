@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02A7AD10-AB3A-41FD-BA05-1A33C0785405}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HelpSGF.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>HelpSGF.iOS</AssemblyName>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\MainPageRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <BundleResource Include="Resources\tab_about.png" />
+    <BundleResource Include="Resources\tab_about%402x.png" />
+    <BundleResource Include="Resources\tab_about%403x.png" />
+    <BundleResource Include="Resources\tab_feed.png" />
+    <BundleResource Include="Resources\tab_feed%402x.png" />
+    <BundleResource Include="Resources\tab_feed%403x.png" />
+    <BundleResource Include="Resources\xamarin_logo.png" />
+    <BundleResource Include="Resources\xamarin_logo%402x.png" />
+    <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\App-Icon 1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\App-Icon 120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\App-Icon 180.png" />
+    <BundleResource Include="Resources\location%401x.png" />
+    <BundleResource Include="Resources\location%402x.png" />
+    <BundleResource Include="Resources\location%403x.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\search%402x.png" />
+    <BundleResource Include="Resources\search%403x.png" />
+    <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="Resources\star%402x.png" />
+    <BundleResource Include="Resources\star%403x.png" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\Logo.png" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\Logo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Splash.imageset\Logo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\by_person.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\by_person.imageset\by_person%401x.png" />
+    <ImageAsset Include="Assets.xcassets\by_person.imageset\by_person%402x.png" />
+    <ImageAsset Include="Assets.xcassets\by_person.imageset\by_person%403x.png" />
+    <ImageAsset Include="Assets.xcassets\clothing.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\clothing.imageset\clothing%401x.png" />
+    <ImageAsset Include="Assets.xcassets\clothing.imageset\clothing%402x.png" />
+    <ImageAsset Include="Assets.xcassets\clothing.imageset\clothing%403x.png" />
+    <ImageAsset Include="Assets.xcassets\education.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\education.imageset\education%401x.png" />
+    <ImageAsset Include="Assets.xcassets\education.imageset\education%402x.png" />
+    <ImageAsset Include="Assets.xcassets\education.imageset\education%403x.png" />
+    <ImageAsset Include="Assets.xcassets\emergency.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\emergency.imageset\emergency%401x.png" />
+    <ImageAsset Include="Assets.xcassets\emergency.imageset\emergency%402x.png" />
+    <ImageAsset Include="Assets.xcassets\emergency.imageset\emergency%403x.png" />
+    <ImageAsset Include="Assets.xcassets\food.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\food.imageset\food%401x.png" />
+    <ImageAsset Include="Assets.xcassets\food.imageset\food%402x.png" />
+    <ImageAsset Include="Assets.xcassets\food.imageset\food%403x.png" />
+    <ImageAsset Include="Assets.xcassets\healthcare.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\healthcare.imageset\healthcare%401x.png" />
+    <ImageAsset Include="Assets.xcassets\healthcare.imageset\healthcare%402x.png" />
+    <ImageAsset Include="Assets.xcassets\healthcare.imageset\healthcare%403x.png" />
+    <ImageAsset Include="Assets.xcassets\hyigene.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\hyigene.imageset\hyigene%401x.png" />
+    <ImageAsset Include="Assets.xcassets\hyigene.imageset\hyigene%402x.png" />
+    <ImageAsset Include="Assets.xcassets\hyigene.imageset\hyigene%403x.png" />
+    <ImageAsset Include="Assets.xcassets\jobs.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\jobs.imageset\jobs%401x.png" />
+    <ImageAsset Include="Assets.xcassets\jobs.imageset\jobs%402x.png" />
+    <ImageAsset Include="Assets.xcassets\jobs.imageset\jobs%403x.png" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\kids%401x.png" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\kids%402x.png" />
+    <ImageAsset Include="Assets.xcassets\kids.imageset\kids%403x.png" />
+    <ImageAsset Include="Assets.xcassets\shelter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\shelter.imageset\shelter%401x.png" />
+    <ImageAsset Include="Assets.xcassets\shelter.imageset\shelter%402x.png" />
+    <ImageAsset Include="Assets.xcassets\shelter.imageset\shelter%403x.png" />
+    <ImageAsset Include="Assets.xcassets\support.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\support.imageset\support%401x.png" />
+    <ImageAsset Include="Assets.xcassets\support.imageset\support%402x.png" />
+    <ImageAsset Include="Assets.xcassets\support.imageset\support%403x.png" />
+    <ImageAsset Include="Assets.xcassets\transportation.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\transportation.imageset\transportation%401x.png" />
+    <ImageAsset Include="Assets.xcassets\transportation.imageset\transportation%402x.png" />
+    <ImageAsset Include="Assets.xcassets\transportation.imageset\transportation%403x.png" />
+    <BundleResource Include="Resources\categories\by_person%401x.png" />
+    <BundleResource Include="Resources\categories\by_person%402x.png" />
+    <BundleResource Include="Resources\categories\by_person%403x.png" />
+    <BundleResource Include="Resources\categories\clothing%401x.png" />
+    <BundleResource Include="Resources\categories\clothing%402x.png" />
+    <BundleResource Include="Resources\categories\clothing%403x.png" />
+    <BundleResource Include="Resources\categories\education%401x.png" />
+    <BundleResource Include="Resources\categories\education%402x.png" />
+    <BundleResource Include="Resources\categories\education%403x.png" />
+    <BundleResource Include="Resources\categories\emergency%401x.png" />
+    <BundleResource Include="Resources\categories\emergency%402x.png" />
+    <BundleResource Include="Resources\categories\emergency%403x.png" />
+    <BundleResource Include="Resources\categories\food%401x.png" />
+    <BundleResource Include="Resources\categories\food%402x.png" />
+    <BundleResource Include="Resources\categories\food%403x.png" />
+    <BundleResource Include="Resources\categories\healthcare%401x.png" />
+    <BundleResource Include="Resources\categories\healthcare%402x.png" />
+    <BundleResource Include="Resources\categories\healthcare%403x.png" />
+    <BundleResource Include="Resources\categories\hyigene%401x.png" />
+    <BundleResource Include="Resources\categories\hyigene%402x.png" />
+    <BundleResource Include="Resources\categories\hyigene%403x.png" />
+    <BundleResource Include="Resources\categories\jobs%401x.png" />
+    <BundleResource Include="Resources\categories\jobs%402x.png" />
+    <BundleResource Include="Resources\categories\jobs%403x.png" />
+    <BundleResource Include="Resources\categories\kids%401x.png" />
+    <BundleResource Include="Resources\categories\kids%402x.png" />
+    <BundleResource Include="Resources\categories\kids%403x.png" />
+    <BundleResource Include="Resources\categories\location.png" />
+    <BundleResource Include="Resources\categories\location%402x.png" />
+    <BundleResource Include="Resources\categories\location%403x.png" />
+    <BundleResource Include="Resources\categories\shelter%401x.png" />
+    <BundleResource Include="Resources\categories\shelter%402x.png" />
+    <BundleResource Include="Resources\categories\shelter%403x.png" />
+    <BundleResource Include="Resources\categories\support%401x.png" />
+    <BundleResource Include="Resources\categories\support%402x.png" />
+    <BundleResource Include="Resources\categories\support%403x.png" />
+    <BundleResource Include="Resources\categories\transportation%401x.png" />
+    <BundleResource Include="Resources\categories\transportation%402x.png" />
+    <BundleResource Include="Resources\categories\transportation%403x.png" />
+    <BundleResource Include="Resources\arrow-left.png" />
+    <BundleResource Include="Resources\arrow-left%402x.png" />
+    <BundleResource Include="Resources\arrow-left%403x.png" />
+    <BundleResource Include="Resources\arrow-right.png" />
+    <BundleResource Include="Resources\arrow-right%402x.png" />
+    <BundleResource Include="Resources\arrow-right%403x.png" />
+    <BundleResource Include="Resources\by_person.svg" />
+    <BundleResource Include="Resources\by_person%401x.png" />
+    <BundleResource Include="Resources\by_person%402x.png" />
+    <BundleResource Include="Resources\by_person%403x.png" />
+    <BundleResource Include="Resources\call.png" />
+    <BundleResource Include="Resources\call%402x.png" />
+    <BundleResource Include="Resources\call%403x.png" />
+    <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\checkmark%402x.png" />
+    <BundleResource Include="Resources\checkmark%403x.png" />
+    <BundleResource Include="Resources\close.png" />
+    <BundleResource Include="Resources\close%402x.png" />
+    <BundleResource Include="Resources\close%403x.png" />
+    <BundleResource Include="Resources\map_marker%403x.png" />
+    <BundleResource Include="Resources\map_marker%402x.png" />
+    <BundleResource Include="Resources\map_marker.png" />
+    <BundleResource Include="Resources\star-fill%403x.png" />
+    <BundleResource Include="Resources\star-fill%402x.png" />
+    <BundleResource Include="Resources\star-fill.png" />
+    <BundleResource Include="Resources\twitter%403x.png" />
+    <BundleResource Include="Resources\twitter%402x.png" />
+    <BundleResource Include="Resources\twitter.png" />
+    <BundleResource Include="Resources\facebook%403x.png" />
+    <BundleResource Include="Resources\facebook%402x.png" />
+    <BundleResource Include="Resources\facebook.png" />
+    <BundleResource Include="Resources\link%403x.png" />
+    <BundleResource Include="Resources\link%402x.png" />
+    <BundleResource Include="Resources\link.png" />
+    <BundleResource Include="Resources\email%403x.png" />
+    <BundleResource Include="Resources\email%402x.png" />
+    <BundleResource Include="Resources\email.png" />
+    <BundleResource Include="Resources\directions%403x.png" />
+    <BundleResource Include="Resources\directions%402x.png" />
+    <BundleResource Include="Resources\directions.png" />
+    <BundleResource Include="Resources\tags%403x.png" />
+    <BundleResource Include="Resources\tags%402x.png" />
+    <BundleResource Include="Resources\tags.png" />
+    <BundleResource Include="Resources\map marker%403x.png" />
+    <BundleResource Include="Resources\map marker%402x.png" />
+    <BundleResource Include="Resources\map marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\HelpSGF\HelpSGF.csproj">
+      <Project>{B5D72620-9F9F-4860-A7D9-5D433FA80542}</Project>
+      <Name>HelpSGF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+    <Folder Include="Assets.xcassets\Splash.imageset\" />
+    <Folder Include="Assets.xcassets\by_person.imageset\" />
+    <Folder Include="Assets.xcassets\clothing.imageset\" />
+    <Folder Include="Assets.xcassets\education.imageset\" />
+    <Folder Include="Assets.xcassets\emergency.imageset\" />
+    <Folder Include="Assets.xcassets\food.imageset\" />
+    <Folder Include="Assets.xcassets\healthcare.imageset\" />
+    <Folder Include="Assets.xcassets\hyigene.imageset\" />
+    <Folder Include="Assets.xcassets\jobs.imageset\" />
+    <Folder Include="Assets.xcassets\kids.imageset\" />
+    <Folder Include="Assets.xcassets\shelter.imageset\" />
+    <Folder Include="Assets.xcassets\support.imageset\" />
+    <Folder Include="Assets.xcassets\transportation.imageset\" />
+    <Folder Include="Resources\categories\" />
+  </ItemGroup>
+</Project>

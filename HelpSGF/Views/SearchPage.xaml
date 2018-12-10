@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelpSGF.Views.SearchPage">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="50" RowSpacing="43" Padding="34">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Image="categories/shelter.png" Grid.Row="0" Grid.Column="0" CommandParameter="shelter" Clicked="Handle_Clicked" />
+            <Button Image="categories/healthcare.png" Grid.Row="0" Grid.Column="1" CommandParameter="healthcare" />
+            <Button Image="categories/clothing.png" Grid.Row="0" Grid.Column="2" CommandParameter="clothing" />
+            
+            <Button Image="categories/transportation.png" Grid.Row="1" Grid.Column="0" />
+            <Button Image="categories/food.png" Grid.Row="1" Grid.Column="1" />
+            <Button Image="categories/education.png" Grid.Row="1" Grid.Column="2" />
+            
+            <Button Image="categories/jobs.png" Grid.Row="2" Grid.Column="0" />
+            <Button Image="categories/by_person.png" Grid.Row="2" Grid.Column="1" />
+            <Button Image="categories/hyigene.png" Grid.Row="2" Grid.Column="2" />
+            
+            <Button Image="categories/kids.png" Grid.Row="3" Grid.Column="0" />
+            <Button Image="categories/emergency.png" Grid.Row="3" Grid.Column="1" />
+            <Button Image="categories/support.png" Grid.Row="3" Grid.Column="2" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

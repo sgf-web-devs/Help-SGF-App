@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelpSGF.Views.LocationsPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <Grid Padding="16 12 10 12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16" />
+                </Grid.RowDefinitions>
+                
+                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                    <Label FontSize="14" FontAttributes="Bold">4 Results</Label>
+                </StackLayout>
+                
+                <StackLayout Grid.Column="1" Orientation="Horizontal" x:Name="MapButton">
+                    <Label FontSize="14">Map</Label>
+                    <Image Source="map_marker.png"></Image>
+                </StackLayout>
+                
+                <StackLayout Grid.Column="2" Orientation="Horizontal" x:Name="FilterButton">
+                    <Label FontSize="14">Filter</Label>
+                    <Image Source="tags.png"></Image>
+                </StackLayout>
+            </Grid>
+            
+            <StackLayout Padding="0 0 0 15" Margin="0">
+                <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
+            </StackLayout>
+            
+            
+            <ListView x:Name="SelectedFilters">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" LineBreakMode="NoWrap" FontSize="16" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <ListView x:Name="LocationsListView" VerticalOptions="FillAndExpand" HasUnevenRows="true" IsPullToRefreshEnabled="true" CachingStrategy="RecycleElement" ItemSelected="OnLocationSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" />
+                                <Label Text="{Binding FormattedAddress}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
