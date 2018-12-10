@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelpSGF.Views.LocationsPage">
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HelpSGF.Views.LocationsPage"
+    xmlns:HelpSGF="clr-namespace:HelpSGF;assembly=HelpSGF">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <Grid Padding="16 12 10 12">
+            <Grid Padding="12, 16, 12, 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="70" />
@@ -28,22 +32,26 @@
                 </StackLayout>
             </Grid>
             
-            <StackLayout Padding="0 0 0 15" Margin="0">
+            <StackLayout Padding="15, 0, 0, 0" Margin="0">
                 <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
             </StackLayout>
             
-            
-            <ListView x:Name="SelectedFilters">
-                <ListView.ItemTemplate>
+            <HelpSGF:RepeaterView x:Name="SelectionFilter" ItemsSource="{Binding Filters}" Orientation="Horizontal" Padding="12, 10, 12, 10">
+                <HelpSGF:RepeaterView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Name}" LineBreakMode="NoWrap" FontSize="16" />
+                            <StackLayout Orientation="Horizontal" Margin="0, 0, 10, 0">
+                                <Image Source="close.png" />
+                                <Label Text="{Binding .}" FontSize="14" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </HelpSGF:RepeaterView.ItemTemplate>
+            </HelpSGF:RepeaterView>
+            
+            <StackLayout Padding="15, 0, 0, 0" Margin="0">
+                <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
+            </StackLayout>
             
             <ListView x:Name="LocationsListView" VerticalOptions="FillAndExpand" HasUnevenRows="true" IsPullToRefreshEnabled="true" CachingStrategy="RecycleElement" ItemSelected="OnLocationSelected">
                 <ListView.ItemTemplate>

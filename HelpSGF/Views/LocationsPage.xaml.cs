@@ -5,6 +5,7 @@ using HelpSGF.Models;
 
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using HelpSGF.ViewModels;
 
 namespace HelpSGF.Views
 {
@@ -17,8 +18,10 @@ namespace HelpSGF.Views
 
         public LocationsPage()
         {
+            BindingContext = new SelectionFilter();
             Tester = "Does this work?";
             InitializeComponent();
+            Title = "Results";
 
             Locations = dataService.GetLocations();
             LocationsListView.ItemsSource = Locations;
