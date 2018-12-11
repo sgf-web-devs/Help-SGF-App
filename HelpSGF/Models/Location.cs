@@ -17,6 +17,7 @@ namespace HelpSGF.Models
         public string Country { get; set; }
         public double Lattitude { get; set; }
         public double Longitude { get; set; }
+        public double Index { get; set; }
 
         //[JsonProperty("formatted_address")]
         //public string FormattedAddress { get; set; }

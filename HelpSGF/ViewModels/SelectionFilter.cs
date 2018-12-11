@@ -28,5 +28,7 @@ namespace HelpSGF.ViewModels
                 "Veteran", "Laundry", "LGTBW"
             };
         }
+
+
     }
 }

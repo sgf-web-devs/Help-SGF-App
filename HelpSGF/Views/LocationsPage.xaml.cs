@@ -38,5 +38,12 @@ namespace HelpSGF.Views
             // Manually deselect item.
             LocationsListView.SelectedItem = null;
         }
+
+        public void OnFilterTap(object sender, EventArgs args)
+        {
+            var view = sender as View;
+            var filter = view?.BindingContext as string;
+            DisplayAlert("Filter Function Coming...", "You have selected " + filter, "Ok");
+        }
     }
 }

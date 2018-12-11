@@ -19,6 +19,7 @@ namespace HelpSGF.Services
 
         public ObservableCollection<Location> GetLocations()
         {
+            var i = 0;
             //List<Location> locations = new List<Location>();
             AlgoliaClient client = new AlgoliaClient("ZK2OLFIMQP", "781ea64211b8349e8ddb934ba33513d5");
             Index index = client.InitIndex("testing");
@@ -41,6 +42,8 @@ namespace HelpSGF.Services
 
             foreach (var location in results)
             {
+                i++;
+                location.Index = i;
                 Locations.Add(location);
             }
 
