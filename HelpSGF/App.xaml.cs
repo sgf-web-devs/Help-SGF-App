@@ -15,6 +15,12 @@ namespace HelpSGF
 
 
             MainPage = new MainPage();
+
+            var navigationPage = new NavigationPage(MainPage)
+            {
+                BarBackgroundColor = Color.LightGreen,
+                BarTextColor = Color.White
+            };
         }
 
         protected override void OnStart()

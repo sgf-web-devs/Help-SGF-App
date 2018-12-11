@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelpSGF.Views.SearchPage">
+<ContentPage 
+    BackgroundColor="#B4E2D9"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="HelpSGF.Views.SearchPage"
+    xmlns:HelpSGF="clr-namespace:HelpSGF;assembly=HelpSGF"
+    NavigationPage.HasNavigationBar="False"
+    >
     <ContentPage.Content>
-        <Grid ColumnSpacing="50" RowSpacing="43" Padding="34">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Button Image="categories/shelter.png" Grid.Row="0" Grid.Column="0" CommandParameter="shelter" Clicked="Handle_Clicked" />
-            <Button Image="categories/healthcare.png" Grid.Row="0" Grid.Column="1" CommandParameter="healthcare" />
-            <Button Image="categories/clothing.png" Grid.Row="0" Grid.Column="2" CommandParameter="clothing" />
+        
+        <StackLayout>
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text="Search" FontSize="17" FontAttributes="Bold" Margin="12, 0, 0, 0"></Label>
+                    <HelpSGF:HelpSGFSearchBar
+                        x:Name="SearchBar"
+                        Placeholder="Location, Categories, Type of Need"
+                        SearchCommand="{Binding SearchCommand}" 
+                        SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}"
+                        Margin="0"
+                    />
+                </StackLayout>
+                
+                <StackLayout Grid.Row="1" BackgroundColor="White">
+                    <Grid ColumnSpacing="50" RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Image="categories/shelter.png" Grid.Row="0" Grid.Column="0" CommandParameter="shelter" Clicked="Handle_Clicked" />
+                        <Button Image="categories/healthcare.png" Grid.Row="0" Grid.Column="1" CommandParameter="healthcare" Clicked="Handle_Clicked" />
+                        <Button Image="categories/clothing.png" Grid.Row="0" Grid.Column="2" CommandParameter="clothing" Clicked="Handle_Clicked" />
+                        
+                        <Button Image="categories/transportation.png" Grid.Row="1" Grid.Column="0" CommandParameter="transportation" Clicked="Handle_Clicked" />
+                        <Button Image="categories/food.png" Grid.Row="1" Grid.Column="1" CommandParameter="food" Clicked="Handle_Clicked" />
+                        <Button Image="categories/education.png" Grid.Row="1" Grid.Column="2" CommandParameter="education" Clicked="Handle_Clicked" />
+                        
+                        <Button Image="categories/jobs.png" Grid.Row="2" Grid.Column="0" CommandParameter="jobs" Clicked="Handle_Clicked" />
+                        <Button Image="categories/by_person.png" Grid.Row="2" Grid.Column="1" CommandParameter="by_person" Clicked="Handle_Clicked" />
+                        <Button Image="categories/hyigene.png" Grid.Row="2" Grid.Column="2" CommandParameter="hyigene" Clicked="Handle_Clicked" />
+                        
+                        <Button Image="categories/kids.png" Grid.Row="3" Grid.Column="0" CommandParameter="kids" Clicked="Handle_Clicked" />
+                        <Button Image="categories/emergency.png" Grid.Row="3" Grid.Column="1" CommandParameter="emergency" Clicked="Handle_Clicked" />
+                        <Button Image="categories/support.png" Grid.Row="3" Grid.Column="2" CommandParameter="support" Clicked="Handle_Clicked" />
+                    </Grid>
+                </StackLayout>
+            </Grid>
             
-            <Button Image="categories/transportation.png" Grid.Row="1" Grid.Column="0" />
-            <Button Image="categories/food.png" Grid.Row="1" Grid.Column="1" />
-            <Button Image="categories/education.png" Grid.Row="1" Grid.Column="2" />
             
-            <Button Image="categories/jobs.png" Grid.Row="2" Grid.Column="0" />
-            <Button Image="categories/by_person.png" Grid.Row="2" Grid.Column="1" />
-            <Button Image="categories/hyigene.png" Grid.Row="2" Grid.Column="2" />
+
             
-            <Button Image="categories/kids.png" Grid.Row="3" Grid.Column="0" />
-            <Button Image="categories/emergency.png" Grid.Row="3" Grid.Column="1" />
-            <Button Image="categories/support.png" Grid.Row="3" Grid.Column="2" />
-        </Grid>
+            
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
