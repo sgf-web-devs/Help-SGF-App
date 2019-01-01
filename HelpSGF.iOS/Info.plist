@@ -10,8 +10,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -25,14 +23,16 @@
 	<key>CFBundleDisplayName</key>
 	<string>Help SGF</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.doorjambs.Help-SGF</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>sgfwebdevs.helpsgf.app</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>Help SGF</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>CFBundleVersion</key>
+	<string>1.1.0</string>
 </dict>
 </plist>

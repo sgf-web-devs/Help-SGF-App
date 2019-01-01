@@ -27,7 +27,7 @@
                 </StackLayout>
                 
                 <StackLayout Grid.Row="1" BackgroundColor="White">
-                    <Grid ColumnSpacing="50" RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0">
+                    <Grid ColumnSpacing="50" RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />

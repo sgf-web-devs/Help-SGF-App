@@ -18,7 +18,7 @@ namespace HelpSGF.Views
 
         public LocationsPage()
         {
-            BindingContext = new SelectionFilter();
+            BindingContext = new ResultsViewModel();
             Tester = "Does this work?";
             InitializeComponent();
             Title = "Results";
@@ -27,13 +27,15 @@ namespace HelpSGF.Views
             LocationsListView.ItemsSource = Locations;
         }
 
-        public void OnLocationSelected(object sender, SelectedItemChangedEventArgs args)
+        void OnLocationSelected(object sender, SelectedItemChangedEventArgs args)
         {
             if (!(args.SelectedItem is Location location))
                 return;
 
             Console.WriteLine(location.Name + " Tapped");
             //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            //await Navigation.PushAsync(new LocationDetailPage(new LocationDetailPage(item)));
+            Navigation.PushAsync(new LocationDetailPage());
 
             // Manually deselect item.
             LocationsListView.SelectedItem = null;
@@ -41,9 +43,20 @@ namespace HelpSGF.Views
 
         public void OnFilterTap(object sender, EventArgs args)
         {
+            var categoryFilterPage = new NavigationPage(new CategoryFilterPage())
+            {
+                BarBackgroundColor = Color.FromHex("#B4E2D9"),
+                BarTextColor = Color.Black
+            };
+
+            Navigation.PushModalAsync(categoryFilterPage);
+        }
+
+        public void OnFilterItemTap(object sender, EventArgs args)
+        {
             var view = sender as View;
             var filter = view?.BindingContext as string;
-            DisplayAlert("Filter Function Coming...", "You have selected " + filter, "Ok");
+            DisplayAlert("This will work in the next release", "You have selected " + filter, "Ok");
         }
     }
 }

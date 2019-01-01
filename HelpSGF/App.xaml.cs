@@ -18,8 +18,8 @@ namespace HelpSGF
 
             var navigationPage = new NavigationPage(MainPage)
             {
-                BarBackgroundColor = Color.LightGreen,
-                BarTextColor = Color.White
+                //BarBackgroundColor = Color.LightGreen,
+                //BarTextColor = Color.White
             };
         }
 

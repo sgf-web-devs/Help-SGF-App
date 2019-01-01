@@ -18,15 +18,18 @@
                 </Grid.RowDefinitions>
                 
                 <StackLayout Grid.Column="0" Orientation="Horizontal">
-                    <Label FontSize="14" FontAttributes="Bold">4 Results</Label>
+                    <Label FontSize="14" FontAttributes="Bold">12 Results</Label>
                 </StackLayout>
                 
-                <StackLayout Grid.Column="1" Orientation="Horizontal" x:Name="MapButton">
+                <!--<StackLayout Grid.Column="1" Orientation="Horizontal" x:Name="MapButton">
                     <Label FontSize="14">Map</Label>
                     <Image Source="map_marker.png"></Image>
-                </StackLayout>
+                </StackLayout>-->
                 
                 <StackLayout Grid.Column="2" Orientation="Horizontal" x:Name="FilterButton">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFilterTap" />
+                    </StackLayout.GestureRecognizers>
                     <Label FontSize="14">Filter</Label>
                     <Image Source="tags.png"></Image>
                 </StackLayout>
@@ -42,7 +45,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Margin="0, 0, 12, 0">
                                 <StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="OnFilterTap" />
+                                    <TapGestureRecognizer Tapped="OnFilterItemTap" />
                                 </StackLayout.GestureRecognizers>
                                 <Image Source="close.png" />
                                 <Label Text="{Binding .}" FontSize="14" />

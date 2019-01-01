@@ -13,6 +13,8 @@
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />  
     <PackageReference Include="Algolia.Search" Version="5.2.0" />
     <PackageReference Include="LiveXAML" Version="2.1.57" />
+    <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
@@ -20,5 +22,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom Controls\" />
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\CategoriesPage %28copy%29.xaml" />
   </ItemGroup>
 </Project>

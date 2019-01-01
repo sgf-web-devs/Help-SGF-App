@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelpSGF.Views.CategoriesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="CategoriesListView" ItemsSource="{Binding Categories}" Header="" HasUnevenRows="true" ItemSelected="Handle_ItemSelected">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <StackLayout Padding="15, 10, 0, 5">
+                                <Label Text="Find Organizations and Services for …" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                            
+                            <StackLayout Padding="15, 0, 0, 0" Margin="0">
+                                <BoxView BackgroundColor="#DADADA" HeightRequest="2" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}">
+                            
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
