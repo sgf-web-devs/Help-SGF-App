@@ -1,0 +1,6 @@
+﻿<configuration>
+    <appSettings>
+        <add key="algolia.applicationId" value="" />
+        <add key="algolia.apiKey" value="" />
+    </appSettings>
+</configuration>

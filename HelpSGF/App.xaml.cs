@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using HelpSGF.Views;
+using PCLAppConfig;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HelpSGF
@@ -11,6 +12,8 @@ namespace HelpSGF
 
         public App()
         {
+            ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
             InitializeComponent();
 
 

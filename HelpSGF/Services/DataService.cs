@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Algolia.Search;
 using HelpSGF.Models;
 using Newtonsoft.Json;
+using PCLAppConfig;
 
 namespace HelpSGF.Services
 {
@@ -21,7 +22,7 @@ namespace HelpSGF.Services
         {
             var i = 0;
             //List<Location> locations = new List<Location>();
-            AlgoliaClient client = new AlgoliaClient("ZK2OLFIMQP", "781ea64211b8349e8ddb934ba33513d5");
+            AlgoliaClient client = new AlgoliaClient(ConfigurationManager.AppSettings["algolia.applicationId"], ConfigurationManager.AppSettings["algolia.apiKey"]);
             Index index = client.InitIndex("testing");
 
             var res = index.Search(new Query("food"));

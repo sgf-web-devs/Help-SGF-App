@@ -15,6 +15,7 @@
     <PackageReference Include="LiveXAML" Version="2.1.57" />
     <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+    <PackageReference Include="PCLAppConfig" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
