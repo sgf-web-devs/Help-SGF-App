@@ -60,5 +60,31 @@ namespace HelpSGF.Services
 
             return Locations;
         }
+
+        public ObservableCollection<Location> SearchLocations(string searchText)
+        {
+            var i = 0;
+            AlgoliaClient client = new AlgoliaClient(ConfigurationManager.AppSettings["algolia.applicationId"], ConfigurationManager.AppSettings["algolia.apiKey"]);
+            Index index = client.InitIndex("testing");
+
+            var res = index.Search(new Query(searchText));
+            Console.WriteLine(res["hits"]);
+
+            var count = res.Count;
+            var results = JsonConvert.DeserializeObject<List<Location>>(res["hits"].ToString());
+
+            Locations = new ObservableCollection<Location>();
+
+            //Locations.Clear();
+
+            foreach (var location in results)
+            {
+                i++;
+                location.Index = i;
+                Locations.Add(location);
+            }
+
+            return Locations;
+        }
     }
 }

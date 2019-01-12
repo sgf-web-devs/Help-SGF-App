@@ -15,16 +15,20 @@ namespace HelpSGF.Views
         public DataService dataService = new DataService();
         ObservableCollection<Location> Locations = new ObservableCollection<Location>();
 
+        ResultsViewModel viewModel;
 
-        public LocationsPage()
+
+        public LocationsPage(ResultsViewModel viewModel)
         {
-            BindingContext = new ResultsViewModel();
+            //BindingContext = new ResultsViewModel();
             Tester = "Does this work?";
             InitializeComponent();
             Title = "Results";
 
-            Locations = dataService.GetLocations();
-            LocationsListView.ItemsSource = Locations;
+            BindingContext = this.viewModel = viewModel;
+
+            //Locations = dataService.GetLocations();
+            //LocationsListView.ItemsSource = Locations;
         }
 
         void OnLocationSelected(object sender, SelectedItemChangedEventArgs args)

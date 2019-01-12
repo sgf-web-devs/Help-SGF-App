@@ -28,7 +28,7 @@ namespace HelpSGF.Views
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync(new LocationsPage());
+            Navigation.PushAsync(new LocationsPage(new ResultsViewModel()));
         }
 
         static string UppercaseWords(string value)
