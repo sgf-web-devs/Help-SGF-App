@@ -20,6 +20,9 @@
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
     <Compile Remove="Views\MainPageRenderer.cs" />
+    <Compile Remove="Views\AboutPage.xaml.cs" />
+    <Compile Remove="ViewModels\ItemsViewModel.cs" />
+    <Compile Remove="ViewModels\MapDemoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom Controls\" />
@@ -27,5 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\CategoriesPage %28copy%29.xaml" />
+    <EmbeddedResource Remove="Views\AboutPage.xaml" />
   </ItemGroup>
 </Project>

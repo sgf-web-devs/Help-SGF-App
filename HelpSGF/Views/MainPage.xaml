@@ -21,7 +21,7 @@
                 <views:SearchPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="About">
+        <!--<NavigationPage Title="About">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="star.png" />
@@ -30,6 +30,6 @@
             <x:Arguments>
                 <views:ItemsPage />
             </x:Arguments>
-        </NavigationPage>
+        </NavigationPage>-->
     </TabbedPage.Children>
 </TabbedPage>
