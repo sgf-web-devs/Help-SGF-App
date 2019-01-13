@@ -82,7 +82,20 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
+    <AndroidResource Include="Resources\drawable\categories_shelter.png" />
+    <AndroidResource Include="Resources\drawable\categories_by_person.png" />
+    <AndroidResource Include="Resources\drawable\categories_clothing.png" />
+    <AndroidResource Include="Resources\drawable\categories_education.png" />
+    <AndroidResource Include="Resources\drawable\categories_emergency.png" />
+    <AndroidResource Include="Resources\drawable\categories_food.png" />
+    <AndroidResource Include="Resources\drawable\categories_healthcare.png" />
+    <AndroidResource Include="Resources\drawable\categories_hyigene.png" />
+    <AndroidResource Include="Resources\drawable\categories_jobs.png" />
+    <AndroidResource Include="Resources\drawable\categories_kids.png" />
+    <AndroidResource Include="Resources\drawable\categories_location.png" />
+    <AndroidResource Include="Resources\drawable\categories_support.png" />
+    <AndroidResource Include="Resources\drawable\categories_transportation.png" />
+    <AndroidResource Include="Resources\drawable\categories_xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
