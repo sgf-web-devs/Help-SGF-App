@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace HelpSGF.Models
@@ -15,17 +17,36 @@ namespace HelpSGF.Models
         public string State { get; set; }
         public string Zip { get; set; }
         public string Country { get; set; }
-        public double Lattitude { get; set; }
+        public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double Index { get; set; }
+        public List<ServiceTypeDetail> ServiceTypeDetails { get; set; }
+        public List<Contact> contacts { get; set; }
+
 
         //[JsonProperty("formatted_address")]
         //public string FormattedAddress { get; set; }
 
-        private string formattedAddress;
+        private string formattedAddressPreview;
 
         [JsonProperty("formatted_address")]
-        public string FormattedAddress {
+        public string FormattedAddressPreview {
+            get
+            {
+                ///return FormattedAddress.Replace(", USA", "");
+                return formattedAddressPreview.Replace(", USA", "");
+            }
+
+            set
+            {
+                formattedAddressPreview = value;
+            }
+        }
+
+        private string formattedAddress;
+        [JsonProperty("formattedAddress")]
+        public string FormattedAddress
+        {
             get
             {
                 ///return FormattedAddress.Replace(", USA", "");
@@ -40,9 +61,30 @@ namespace HelpSGF.Models
 
 
         public string KeyedInAddressHash { get; set; }
+
+
         [JsonProperty("nice_url")]
         public string NiceURL { get; set; }
-        [JsonProperty("service_types")]
+
+
         public string[] ServiceTypes { get; set; }
+
+        public static implicit operator Location(Task<Location> v)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+    public class ServiceTypeDetail
+    {
+        public string ServiceType { get; set; }
+        public string Detail { get; set; }
+    }
+
+    public class Contact
+    {
+        public string ContactType { get; set; }
+        public string ContactData { get; set; }
+    }
+
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Algolia.Search;
 using HelpSGF.Models;
@@ -12,6 +13,7 @@ namespace HelpSGF.Services
 {
     public class DataService
     {
+        static HttpClient httpClient = new HttpClient();
         public ObservableCollection<Location> Locations { get; set; }
 
         public DataService()
@@ -85,6 +87,26 @@ namespace HelpSGF.Services
             }
 
             return Locations;
+        }
+
+        public async Task<Location> GetLocationAsync(string urlPath)
+        {
+            var location = new Location();
+            var path = "https://helpsgf.com" + urlPath + "json";
+
+            HttpResponseMessage response = await httpClient.GetAsync(path);
+            if (response.IsSuccessStatusCode)
+            {
+                //location = await response.Content.ReadAsStringAsync<Location>();
+                var json = await response.Content.ReadAsStringAsync();
+
+                location = JsonConvert.DeserializeObject<Location>(json);
+
+                var hey2 = location;
+                return location;
+            }
+
+            return null;
         }
     }
 }

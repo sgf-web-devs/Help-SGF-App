@@ -26,20 +26,20 @@
                     <Image Source="map_marker.png"></Image>
                 </StackLayout>-->
                 
-                <StackLayout Grid.Column="2" Orientation="Horizontal" x:Name="FilterButton">
+                <!--<StackLayout Grid.Column="2" Orientation="Horizontal" x:Name="FilterButton">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnFilterTap" />
                     </StackLayout.GestureRecognizers>
                     <Label FontSize="14">Filter</Label>
                     <Image Source="tags.png"></Image>
-                </StackLayout>
+                </StackLayout>-->
             </Grid>
             
             <StackLayout Padding="15, 0, 0, 0" Margin="0">
                 <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
             </StackLayout>
             
-            <HelpSGF:RepeaterView x:Name="SelectionFilter" ItemsSource="{Binding Filters}" Orientation="Horizontal" Padding="12">
+            <!--<HelpSGF:RepeaterView x:Name="SelectionFilter" ItemsSource="{Binding Filters}" Orientation="Horizontal" Padding="12">
                 <HelpSGF:RepeaterView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -53,7 +53,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </HelpSGF:RepeaterView.ItemTemplate>
-            </HelpSGF:RepeaterView>
+            </HelpSGF:RepeaterView>-->
             
             <StackLayout Padding="15, 0, 0, 0" Margin="0">
                 <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
@@ -76,7 +76,7 @@
                                 
                                 <StackLayout Grid.Column="1" Padding="0, 0, 10, 0">
                                     <Label Text="{Binding Name}" FontSize="13" FontAttributes="Bold" />
-                                    <Label Text="{Binding FormattedAddress}" LineBreakMode="NoWrap" FontSize="13" />
+                                    <Label Text="{Binding FormattedAddressPreview}" LineBreakMode="NoWrap" FontSize="13" />
                                 </StackLayout>
                                 
                                 <StackLayout Grid.Column="2" VerticalOptions="Center">

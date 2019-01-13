@@ -6,6 +6,7 @@ using HelpSGF.Models;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using HelpSGF.ViewModels;
+using System.Threading.Tasks;
 
 namespace HelpSGF.Views
 {
@@ -33,13 +34,24 @@ namespace HelpSGF.Views
 
         void OnLocationSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            if (!(args.SelectedItem is Location location))
+            if (!(args.SelectedItem is Location locationSelection))
                 return;
 
-            Console.WriteLine(location.Name + " Tapped");
+            Console.WriteLine(locationSelection.Name + " Tapped");
             //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
             //await Navigation.PushAsync(new LocationDetailPage(new LocationDetailPage(item)));
-            Navigation.PushAsync(new LocationDetailPage());
+
+            //GoToLocationPageAsync(locationSelection.NiceURL);
+
+            Navigation.PushAsync(new LocationDetailPage(locationSelection.NiceURL));
+        }
+
+        public async Task GoToLocationPageAsync(string NiceURL)
+        {
+            var location = await dataService.GetLocationAsync(NiceURL);
+
+
+            //await Navigation.PushAsync(new LocationDetailPage(location));
 
             // Manually deselect item.
             LocationsListView.SelectedItem = null;
@@ -60,7 +72,7 @@ namespace HelpSGF.Views
         {
             var view = sender as View;
             var filter = view?.BindingContext as string;
-            DisplayAlert("This will work in the next release", "You have selected " + filter, "Ok");
+            DisplayAlert("Feature Coming Soon", "You have selected " + filter, "Ok");
         }
     }
 }
