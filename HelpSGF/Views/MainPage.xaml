@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:HelpSGF.Views" x:Class="HelpSGF.Views.MainPage">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:views="clr-namespace:HelpSGF.Views" 
+            x:Class="HelpSGF.Views.MainPage" 
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core" 
+            android:TabbedPage.ToolbarPlacement="Bottom">
     <TabbedPage.Children>
         <!--<NavigationPage Title="Locations">
             <NavigationPage.Icon>
@@ -11,12 +16,7 @@
                 <views:LocationsPage />
             </x:Arguments>
         </NavigationPage>-->
-        <NavigationPage Title="Browse">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="search.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
+        <NavigationPage Title="" Icon="search.png">
             <x:Arguments>
                 <views:SearchPage />
             </x:Arguments>

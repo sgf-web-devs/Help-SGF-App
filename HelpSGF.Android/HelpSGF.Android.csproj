@@ -96,12 +96,14 @@
     <AndroidResource Include="Resources\drawable\categories_support.png" />
     <AndroidResource Include="Resources\drawable\categories_transportation.png" />
     <AndroidResource Include="Resources\drawable\categories_xamarin_logo.png" />
+    <AndroidResource Include="Resources\drawable\search.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelpSGF\HelpSGF.csproj">
