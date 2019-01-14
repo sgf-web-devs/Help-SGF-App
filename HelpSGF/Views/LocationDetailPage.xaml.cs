@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using HelpSGF.Models;
 using HelpSGF.Services;
 using HelpSGF.ViewModels;
-using Naxam.Controls.Mapbox.Forms;
 using Xamarin.Forms;
 
 namespace HelpSGF.Views
@@ -18,13 +17,6 @@ namespace HelpSGF.Views
         //private int serviceGridColumnCount = 0;
         //private int serviceGridRowCount = 0;
         private int serviceItemCount = 0;
-
-        void Handle_Tapped(object sender, System.EventArgs e)
-        {
-            var annotation = (sender as View).BindingContext as Annotation;
-
-            DisplayAlert(annotation?.Title, annotation.SubTitle, "OK");
-        }
 
         public LocationDetailPage(string url = "")
         {

@@ -12,7 +12,6 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />  
     <PackageReference Include="Algolia.Search" Version="5.3.1" />
-    <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.5.2" />
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="PCLAppConfig" Version="1.0.1" />
     <PackageReference Include="Xam.Plugin.HtmlLabel" Version="3.0.2.1" />
@@ -23,10 +22,11 @@
     <Compile Remove="Views\AboutPage.xaml.cs" />
     <Compile Remove="ViewModels\ItemsViewModel.cs" />
     <Compile Remove="ViewModels\MapDemoViewModel.cs" />
+    <Compile Remove="Dtos\MapStyleDto.cs" />
+    <Compile Remove="Services\MapBoxService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom Controls\" />
-    <Folder Include="Dtos\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\CategoriesPage %28copy%29.xaml" />

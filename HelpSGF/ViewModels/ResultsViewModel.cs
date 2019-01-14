@@ -39,7 +39,6 @@ namespace HelpSGF.ViewModels
             }
         }
 
-        private readonly string _resultsLabel;
         public string ResultsLabel
         {
             get
