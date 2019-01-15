@@ -24,6 +24,7 @@
     <Compile Remove="ViewModels\MapDemoViewModel.cs" />
     <Compile Remove="Dtos\MapStyleDto.cs" />
     <Compile Remove="Services\MapBoxService.cs" />
+    <Compile Remove="Models\SubCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom Controls\" />

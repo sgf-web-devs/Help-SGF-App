@@ -25,8 +25,8 @@
                     />
                 </StackLayout>
                 
-                <StackLayout Grid.Row="1" BackgroundColor="White">
-                    <Grid ColumnSpacing="20" RowSpacing="20" Padding="20" BackgroundColor="White" Margin="0" VerticalOptions="FillAndExpand">
+                <StackLayout Grid.Row="1" BackgroundColor="White" IsVisible="false" x:Name="ButtonLayout">
+                    <Grid ColumnSpacing="50" RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0" VerticalOptions="FillAndExpand">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
@@ -40,21 +40,21 @@
                         </Grid.ColumnDefinitions>
                         
                         
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_shelter.png" Grid.Row="0" Grid.Column="0" CommandParameter="shelter" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_healthcare.png" Grid.Row="0" Grid.Column="1" CommandParameter="healthcare" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_clothing.png" Grid.Row="0" Grid.Column="2" CommandParameter="clothing" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_shelter.png" Grid.Row="0" Grid.Column="0" CommandParameter="2065" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_healthcare.png" Grid.Row="0" Grid.Column="1" CommandParameter="2081" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_clothing.png" Grid.Row="0" Grid.Column="2" CommandParameter="2082" Clicked="Handle_Clicked" />
                         
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_transportation.png" Grid.Row="1" Grid.Column="0" CommandParameter="transportation" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_food.png" Grid.Row="1" Grid.Column="1" CommandParameter="food" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_education.png" Grid.Row="1" Grid.Column="2" CommandParameter="education" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_transportation.png" Grid.Row="1" Grid.Column="0" CommandParameter="2083" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_food.png" Grid.Row="1" Grid.Column="1" CommandParameter="2084" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_education.png" Grid.Row="1" Grid.Column="2" CommandParameter="2085" Clicked="Handle_Clicked" />
                         
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_jobs.png" Grid.Row="2" Grid.Column="0" CommandParameter="jobs" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_by_person.png" Grid.Row="2" Grid.Column="1" CommandParameter="by_person" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_hyigene.png" Grid.Row="2" Grid.Column="2" CommandParameter="hyigene" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_jobs.png" Grid.Row="2" Grid.Column="0" CommandParameter="2086" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_by_person.png" Grid.Row="2" Grid.Column="1" CommandParameter="2087" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_hyigene.png" Grid.Row="2" Grid.Column="2" CommandParameter="2088" Clicked="Handle_Clicked" />
                         
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_kids.png" Grid.Row="3" Grid.Column="0" CommandParameter="kids" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_emergency.png" Grid.Row="3" Grid.Column="1" CommandParameter="emergency" Clicked="Handle_Clicked" />
-                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_support.png" Grid.Row="3" Grid.Column="2" CommandParameter="support" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_kids.png" Grid.Row="3" Grid.Column="0" CommandParameter="2089" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_emergency.png" Grid.Row="3" Grid.Column="1" CommandParameter="2090" Clicked="Handle_Clicked" />
+                        <ImageButton Aspect="AspectFit" BackgroundColor="White" Source="categories_support.png" Grid.Row="3" Grid.Column="2" CommandParameter="2091" Clicked="Handle_Clicked" />
                     </Grid>
                 </StackLayout>
             </Grid>

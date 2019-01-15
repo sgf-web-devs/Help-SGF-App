@@ -23,7 +23,6 @@ namespace HelpSGF.Services
         public ObservableCollection<Location> GetLocations()
         {
             var i = 0;
-            //List<Location> locations = new List<Location>();
             AlgoliaClient client = new AlgoliaClient(ConfigurationManager.AppSettings["algolia.applicationId"], ConfigurationManager.AppSettings["algolia.apiKey"]);
             Index index = client.InitIndex("testing");
 
@@ -50,16 +49,6 @@ namespace HelpSGF.Services
                 Locations.Add(location);
             }
 
-            //try
-            //{
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    Debug.WriteLine(ex);
-            //}
-
-
             return Locations;
         }
 
@@ -70,6 +59,49 @@ namespace HelpSGF.Services
             Index index = client.InitIndex("testing");
 
             var res = index.Search(new Query(searchText));
+            Console.WriteLine(res["hits"]);
+
+            var count = res.Count;
+            var results = JsonConvert.DeserializeObject<List<Location>>(res["hits"].ToString());
+
+            Locations = new ObservableCollection<Location>();
+
+            //Locations.Clear();
+
+            foreach (var location in results)
+            {
+                i++;
+                location.Index = i;
+                Locations.Add(location);
+            }
+
+            return Locations;
+        }
+
+        public ObservableCollection<Location> FilterLocations(string filterString)
+        {
+            var i = 0;
+            AlgoliaClient client = new AlgoliaClient(ConfigurationManager.AppSettings["algolia.applicationId"], ConfigurationManager.AppSettings["algolia.apiKey"]);
+            Index index = client.InitIndex("testing");
+
+            string filterQuerystring = "";
+            var filterStrings = filterString.Split(',');
+
+            foreach (var filter in filterStrings)
+            {
+                if(!string.IsNullOrEmpty(filterQuerystring))
+                {
+                    filterQuerystring += " AND ";
+                }
+
+                filterQuerystring += "service_types:" + "\"" + filter + "\"";
+            }
+
+            var query = new Query();
+            query.SetFilters(filterQuerystring);
+
+            var res = index.Search(query);
+
             Console.WriteLine(res["hits"]);
 
             var count = res.Count;
@@ -104,6 +136,23 @@ namespace HelpSGF.Services
 
                 var hey2 = location;
                 return location;
+            }
+
+            return null;
+        }
+
+        public async Task<List<MainCategory>> GetMainCategoriesAsync()
+        {
+            var path = "https://helpsgf.com/Umbraco/Api/API/GetMainCategories";
+            HttpResponseMessage response = await httpClient.GetAsync(path);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+
+                var categories = JsonConvert.DeserializeObject<List<MainCategory>>(json);
+
+                return categories;
             }
 
             return null;

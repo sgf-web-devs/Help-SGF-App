@@ -8,11 +8,8 @@ using HelpSGF.Services;
 
 namespace HelpSGF.ViewModels
 {
-    public class CategoriesViewModel : INotifyPropertyChanged
+    public class CategoriesViewModel : BaseViewModel
     {
-        MockDataCalls dataService = new MockDataCalls();
-
-
         private List<Category> _categories;  // for xaml binding
         public List<Category> Categories
         {
@@ -24,42 +21,22 @@ namespace HelpSGF.ViewModels
             }
         }
 
-        public CategoriesViewModel()
+        private MainCategory _category;  // for xaml binding
+        public MainCategory MainCategory
         {
-            Task.Run(async () => {
-                await InitializeData();
-            });
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private async Task InitializeData()
-        {
-            try
-            {
-                IsBusy = true; // set the ui property "IsRunning" to true(loading) in Xaml ActivityIndicator Control
-                Categories = await dataService.GetParentCategoriesAsync();
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
-
-        private bool _isBusy;   // for showing loader when the task is initializing
-        public bool IsBusy
-        {
-            get { return _isBusy; }
+            get { return _category; }
             set
             {
-                _isBusy = value;
+                _category = value;
                 OnPropertyChanged();
             }
+        }
+
+        public CategoriesViewModel()
+        {
+            //Task.Run(async () => {
+            //    await InitializeData();
+            //});
         }
     }
 }
