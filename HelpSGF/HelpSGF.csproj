@@ -15,6 +15,7 @@
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
     <PackageReference Include="PCLAppConfig" Version="1.0.1" />
     <PackageReference Include="Xam.Plugin.HtmlLabel" Version="3.0.2.1" />
+    <PackageReference Include="LiveXAML" Version="2.1.59" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
