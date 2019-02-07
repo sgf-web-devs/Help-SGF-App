@@ -114,6 +114,7 @@
   <ItemGroup>
     <AndroidAsset Include="..\HelpSGF\App.config">
       <Link>Assets\App.config</Link>
+      <IncludeInPackage>false</IncludeInPackage>
     </AndroidAsset>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
