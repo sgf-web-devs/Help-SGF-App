@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using HelpSGF.Models;
+using HelpSGF.Models.Search;
 
 namespace HelpSGF.ViewModels
 {
@@ -14,7 +15,7 @@ namespace HelpSGF.ViewModels
                 "Veteran", "Laundry", "LGTBW"
             };
 
-            Locations = new ObservableCollection<Location>();
+            LocationSearchResultItems = new ObservableCollection<LocationSearchResultItem>();
         }
 
         private ObservableCollection<string> _filters;
@@ -28,8 +29,8 @@ namespace HelpSGF.ViewModels
             }
         }
 
-        private ObservableCollection<Location> _locations;
-        public ObservableCollection<Location> Locations
+        private ObservableCollection<LocationSearchResultItem> _locations;
+        public ObservableCollection<LocationSearchResultItem> LocationSearchResultItems
         {
             get => _locations;
             set
@@ -43,7 +44,7 @@ namespace HelpSGF.ViewModels
         {
             get
             {
-                return Locations.Count.ToString() + " Results";
+                return LocationSearchResultItems.Count.ToString() + " Results";
             }
         }
     }

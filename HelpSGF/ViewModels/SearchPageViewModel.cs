@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HelpSGF.Models;
 
@@ -20,5 +20,7 @@ namespace HelpSGF.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public Dictionary<string, Dictionary<string, int>> SearchFacets { get; set; }
     }
 }

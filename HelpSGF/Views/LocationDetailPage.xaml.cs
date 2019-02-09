@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ namespace HelpSGF.Views
         //private int serviceGridColumnCount = 0;
         //private int serviceGridRowCount = 0;
         private int serviceItemCount = 0;
+        private int categoryItemCount = 0;
 
         public LocationDetailPage(string url = "")
         {
@@ -67,6 +68,20 @@ namespace HelpSGF.Views
                         ServiceGrid.Children.Add(label, column, (int)Math.Floor((double)serviceItemCount / 2));
 
                         serviceItemCount++;
+                    }
+                }
+
+                if (viewModel.Location.Categories != null && viewModel.Location.Categories.Count > 0)
+                {
+                    foreach (var category in viewModel.Location.Categories)
+                    {
+                        var column = categoryItemCount % 2 == 0 ? 0 : 1;
+
+                        var label = new Label();
+                        label.Text = "•  " + category.ServiceType;
+                        CategoriesGrid.Children.Add(label, column, (int)Math.Floor((double)categoryItemCount / 2));
+
+                        categoryItemCount++;
                     }
                 }
             }

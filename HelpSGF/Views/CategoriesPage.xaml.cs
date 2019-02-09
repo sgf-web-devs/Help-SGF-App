@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HelpSGF.Models;
 using HelpSGF.Views;
 using HelpSGF.ViewModels;
-
+using System.Linq;
 using Xamarin.Forms;
 using HelpSGF.Services;
 
@@ -18,7 +18,7 @@ namespace HelpSGF.Views
         {
             InitializeComponent();
 
-            Title = vm.MainCategory.Name;
+            Title = vm.MainCategoryName;
 
             NavigationPage.SetBackButtonTitle(this, "");
 
@@ -27,12 +27,12 @@ namespace HelpSGF.Views
 
         void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var category = (Category)e.SelectedItem;
-            var locations = dataService.FilterLocations(category.ServiceType);
+            var category = (KeyValuePair<string, int>)e.SelectedItem;
+            var locations = dataService.FilterLocations(viewModel.MainCategoryName + " > " + category.Key);
 
             var resultsViewModel = new ResultsViewModel
             {
-                Locations = locations
+                LocationSearchResultItems = locations
             };
 
             Navigation.PushAsync(new LocationsPage(resultsViewModel));
