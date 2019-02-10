@@ -15,7 +15,7 @@
                     <htmlLabel:HtmlLabel Text="{Binding Location.Description}"/>
                         
                     
-                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0">
+                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0" x:Name="ServicesLabel">
                         Services
                     </Label>
                     
@@ -28,12 +28,12 @@
                         </Grid>
                     </StackLayout>
                     
-                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0">
+                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0" x:Name="CategoriesLabel" IsVisible="false">
                         Categories
                     </Label>
                     
                     <StackLayout>
-                        <Grid x:Name="CategoriesGrid">
+                        <Grid x:Name="CategoriesGrid" IsVisible="false">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width=".5*" />
                                 <ColumnDefinition Width=".5*" />

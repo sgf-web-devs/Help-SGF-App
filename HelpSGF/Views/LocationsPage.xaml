@@ -21,11 +21,13 @@
                     <Label FontSize="14" FontAttributes="Bold" Text="{Binding ResultsLabel}" />
                 </StackLayout>
                 
+                <!--This feature will come later. Mock UI placeholder commented out for later user-->
                 <!--<StackLayout Grid.Column="1" Orientation="Horizontal" x:Name="MapButton">
                     <Label FontSize="14">Map</Label>
                     <Image Source="map_marker.png"></Image>
                 </StackLayout>-->
                 
+                <!--This feature will come later. Mock UI placeholder commented out for later user-->
                 <!--<StackLayout Grid.Column="2" Orientation="Horizontal" x:Name="FilterButton">
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnFilterTap" />
@@ -39,6 +41,7 @@
                 <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
             </StackLayout>
             
+            <!--This feature will come later. Mock UI placeholder commented out for later user-->
             <!--<HelpSGF:RepeaterView x:Name="SelectionFilter" ItemsSource="{Binding Filters}" Orientation="Horizontal" Padding="12">
                 <HelpSGF:RepeaterView.ItemTemplate>
                     <DataTemplate>

@@ -110,6 +110,13 @@ namespace HelpSGF.Views
 
                 if (viewModel.Location.Categories != null && viewModel.Location.Categories.Count > 0)
                 {
+                    // If new values are loaded, hide the old grid.
+                    ServiceGrid.IsVisible = false;
+                    ServicesLabel.IsVisible = false;
+
+                    CategoriesLabel.IsVisible = true;
+                    CategoriesGrid.IsVisible = true;
+
                     foreach (var category in viewModel.Location.Categories)
                     {
                         var column = categoryItemCount % 2 == 0 ? 0 : 1;
@@ -270,8 +277,37 @@ namespace HelpSGF.Views
 
                         // Facebook is a weird one. These two actually need to combine
                         // to make one label/link
-                        if (contactType == "Facebook URL") { imageIcon = "facebook.png"; }
-                        if (contactType == "Facebook Name") { imageIcon = "facebook.png"; }
+                        if (contactType == "Facebook Name") { continue; }
+
+                        if (contactType == "Facebook URL") { 
+                            imageIcon = "facebook.png";
+
+                            var facebookNameEntry = viewModel.Location.contacts.Where(c => c.ContactType == "Facebook Name");
+                            description.Text = facebookNameEntry.Any() ? facebookNameEntry.First().ContactData : location.Name;
+                            var linkUrl = contact.ContactData;
+
+                            try
+                            {
+                                description.GestureRecognizers.Add(new TapGestureRecognizer
+                                {
+                                    Command = new Command(() => {
+                                        try
+                                        {
+                                            Device.OpenUri(new Uri(linkUrl));
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Console.WriteLine(ex.Message);
+                                        }
+                                    })
+                                });
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                        }
+
 
                         var contentStackLayout = new StackLayout { Padding = new Thickness { Left = 20, Top = 20 } };
                         var lineStackLayout = new StackLayout { Padding = new Thickness { Left = 20, Right = 20 }, Margin = new Thickness { Top = 10 } };
