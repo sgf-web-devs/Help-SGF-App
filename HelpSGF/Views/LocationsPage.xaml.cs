@@ -38,11 +38,14 @@ namespace HelpSGF.Views
             if (!(args.SelectedItem is LocationSearchResultItem locationSelection))
                 return;
 
-            Console.WriteLine(locationSelection.Name + " Tapped");
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-            //await Navigation.PushAsync(new LocationDetailPage(new LocationDetailPage(item)));
-
-            //GoToLocationPageAsync(locationSelection.NiceURL);
+            try
+            {
+                ((ListView)sender).SelectedItem = null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Navigation.PushAsync(new LocationDetailPage(locationSelection.NiceURL));
         }

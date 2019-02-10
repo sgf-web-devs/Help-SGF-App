@@ -25,17 +25,33 @@ namespace HelpSGF.Views
             BindingContext = viewModel = vm;
         }
 
-        void Handle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var category = (KeyValuePair<string, int>)e.SelectedItem;
-            var locations = dataService.FilterLocations(viewModel.MainCategoryName + " > " + category.Key);
-
-            var resultsViewModel = new ResultsViewModel
+            if(((ListView)sender).SelectedItem != null)
             {
-                LocationSearchResultItems = locations
-            };
+                try
+                {
+                    var category = (KeyValuePair<string, int>)args.SelectedItem;
+                    var locations = dataService.FilterLocations(viewModel.MainCategoryName + " > " + category.Key);
 
-            Navigation.PushAsync(new LocationsPage(resultsViewModel));
+                    var resultsViewModel = new ResultsViewModel
+                    {
+                        LocationSearchResultItems = locations
+                    };
+
+                    ((ListView)sender).SelectedItem = null;
+
+                    Navigation.PushAsync(new LocationsPage(resultsViewModel));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nothing selected here");
+            }
         }
     }
 
