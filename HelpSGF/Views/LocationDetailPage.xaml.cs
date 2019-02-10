@@ -6,6 +6,7 @@ using HelpSGF.Models;
 using HelpSGF.Services;
 using HelpSGF.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 
 namespace HelpSGF.Views
 {
@@ -50,7 +51,24 @@ namespace HelpSGF.Views
             if(!viewModel.Location.Latitude.Equals(0) && !viewModel.Location.Longitude.Equals(0))
             {
                 // Embedded Map View
-                MapWebView.Source = viewModel.MapURL;
+                //MapWebView.Source = viewModel.MapURL;
+                try
+                {
+                    var map = new Map(MapSpan.FromCenterAndRadius(new Position(viewModel.Location.Latitude, viewModel.Location.Longitude), Distance.FromMiles(0.3)))
+                    {
+                        //IsShowingUser = true,
+                        HeightRequest = 100,
+                        WidthRequest = 960,
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                        MapType = MapType.Street
+                    };
+
+                    MapView.Children.Add(map);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
             // Service List Grid

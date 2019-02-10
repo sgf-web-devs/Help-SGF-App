@@ -16,6 +16,7 @@
     <PackageReference Include="PCLAppConfig" Version="1.0.1" />
     <PackageReference Include="Xam.Plugin.HtmlLabel" Version="3.0.2.1" />
     <PackageReference Include="LiveXAML" Version="2.1.59" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.4.0.1009999" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\EmptyClass.cs" />
