@@ -2,30 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using static HelpSGF.Utilities.JsonConverters;
 
-namespace HelpSGF.Models
+namespace HelpSGF.Models.Search
 {
-    public class Location
+    public class LocationSearchResultItem
     {
         [JsonProperty("objectID")]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
-        public string Country { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public double Index { get; set; }
 
-        public List<ServiceTypeDetail> ServiceTypeDetails { get; set; }
-        public List<ServiceTypeCategories> Categories { get; set; }
-        public List<Contact> contacts { get; set; }
-
+        public CategoryResultCollection Categories { get; set; }
+        public int Index { get; set; }
 
         //[JsonProperty("formatted_address")]
         //public string FormattedAddress { get; set; }
@@ -33,7 +25,8 @@ namespace HelpSGF.Models
         private string formattedAddressPreview;
 
         [JsonProperty("formatted_address")]
-        public string FormattedAddressPreview {
+        public string FormattedAddressPreview
+        {
             get
             {
                 ///return FormattedAddress.Replace(", USA", "");
@@ -69,29 +62,15 @@ namespace HelpSGF.Models
         [JsonProperty("nice_url")]
         public string NiceURL { get; set; }
 
-        [JsonConverter(typeof(StringTypeOrArrayConverter<string>))]
-        public List<string> ServiceTypes { get; set; }
 
-        public static implicit operator Location(Task<Location> v)
+        public class CategoryResultCollection
         {
-            throw new NotImplementedException();
+            [JsonConverter(typeof(SingleOrArrayConverter<string>))]
+            public List<String> Lvl0 { get; set; }
+            [JsonConverter(typeof(SingleOrArrayConverter<string>))]
+            public List<String> Lvl1 { get; set; }
         }
-    }
 
-    public class ServiceTypeDetail
-    {
-        public string ServiceType { get; set; }
-        public string Detail { get; set; }
-    }
-
-    public class ServiceTypeCategories
-    {
-        public string ServiceType { get; set; }
-    }
-    public class Contact
-    {
-        public string ContactType { get; set; }
-        public string ContactData { get; set; }
     }
 
 }

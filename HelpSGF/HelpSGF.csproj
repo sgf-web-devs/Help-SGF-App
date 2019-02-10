@@ -30,6 +30,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Custom Controls\" />
+    <Folder Include="Models\Search\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\CategoriesPage %28copy%29.xaml" />

@@ -18,7 +18,7 @@
                 </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" TextColor="Black">
+                        <TextCell Text="{Binding Key}" TextColor="Black">
                         </TextCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

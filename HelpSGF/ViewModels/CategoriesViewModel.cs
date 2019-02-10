@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -10,8 +10,8 @@ namespace HelpSGF.ViewModels
 {
     public class CategoriesViewModel : BaseViewModel
     {
-        private List<Category> _categories;  // for xaml binding
-        public List<Category> Categories
+        private Dictionary<string, int> _categories;  // for xaml binding
+        public Dictionary<string, int> Categories
         {
             get { return _categories; }
             set
@@ -21,13 +21,13 @@ namespace HelpSGF.ViewModels
             }
         }
 
-        private MainCategory _category;  // for xaml binding
-        public MainCategory MainCategory
+        private string _mainCategoryName;  // for xaml binding
+        public string MainCategoryName
         {
-            get { return _category; }
+            get { return _mainCategoryName; }
             set
             {
-                _category = value;
+                _mainCategoryName = value;
                 OnPropertyChanged();
             }
         }

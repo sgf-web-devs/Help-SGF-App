@@ -1,6 +1,8 @@
-﻿<configuration>
+<configuration>
     <appSettings>
         <add key="algolia.applicationId" value="" />
         <add key="algolia.apiKey" value="" />
+        <add key="algolia.index" value="" />
+        <add key="helpsgf.apiroot" value="https://helpsgf.com" />
     </appSettings>
 </configuration>

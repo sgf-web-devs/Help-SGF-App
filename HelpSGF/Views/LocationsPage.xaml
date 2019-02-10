@@ -59,7 +59,7 @@
                 <BoxView BackgroundColor="#DADADA" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="0" />
             </StackLayout>
             
-            <ListView x:Name="LocationsListView" ItemsSource="{Binding Locations}" VerticalOptions="FillAndExpand" HasUnevenRows="true" CachingStrategy="RecycleElement" ItemSelected="OnLocationSelected">
+            <ListView x:Name="LocationsListView" ItemsSource="{Binding LocationSearchResultItems}" VerticalOptions="FillAndExpand" HasUnevenRows="true" CachingStrategy="RecycleElement" ItemSelected="OnLocationSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

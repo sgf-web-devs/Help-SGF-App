@@ -33,6 +33,19 @@
                             </Grid.ColumnDefinitions>
                         </Grid>
                     </StackLayout>
+                    
+                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0">
+                        Categories
+                    </Label>
+                    
+                    <StackLayout>
+                        <Grid x:Name="CategoriesGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*" />
+                                <ColumnDefinition Width=".5*" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </StackLayout>
                 </StackLayout>
                 
                 <StackLayout>
