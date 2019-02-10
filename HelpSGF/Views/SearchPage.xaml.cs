@@ -48,7 +48,7 @@ namespace HelpSGF.Views
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
-            GetCategories();
+
 
             SearchBar.SearchCommand = new Command(async () =>
             {
@@ -62,9 +62,18 @@ namespace HelpSGF.Views
             });
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            // This might be a bit much, but for now this will ensure that
+            // the main screen icons are always up to date.
+            GetCategories();
+        }
+
         public async void GetCategories()
         {
 
+            Console.WriteLine("On appearing");
             viewmodel.Categories = await dataService.GetMainCategoriesAsync();
             viewmodel.SearchFacets = dataService.GetFacets();
 

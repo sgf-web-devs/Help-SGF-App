@@ -32,7 +32,7 @@
                 </StackLayout>
                 
                 <StackLayout Grid.Row="1" BackgroundColor="White" IsVisible="false" x:Name="ButtonLayout">
-                    <Grid ColumnSpacing="50"  RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0" VerticalOptions="FillAndExpand" x:Name="CategoriesGrid" >
+                    <Grid ColumnSpacing="50"  RowSpacing="43" Padding="34" BackgroundColor="White" Margin="0" VerticalOptions="FillAndExpand" x:Name="CategoriesGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
