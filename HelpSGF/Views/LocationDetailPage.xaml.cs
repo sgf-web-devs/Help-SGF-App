@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using HelpSGF.Models;
 using HelpSGF.Services;
@@ -51,11 +52,11 @@ namespace HelpSGF.Views
 
             if(!viewModel.Location.Latitude.Equals(0) && !viewModel.Location.Longitude.Equals(0))
             {
-                // Embedded Map View
-                //MapWebView.Source = viewModel.MapURL;
                 try
                 {
-                    var map = new Map(MapSpan.FromCenterAndRadius(new Position(viewModel.Location.Latitude, viewModel.Location.Longitude), Distance.FromMiles(0.3)))
+                    var position = new Position(viewModel.Location.Latitude, viewModel.Location.Longitude);
+
+                    var map = new Map(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(0.1)))
                     {
                         //IsShowingUser = true,
                         HeightRequest = 100,
@@ -64,7 +65,25 @@ namespace HelpSGF.Views
                         MapType = MapType.Street
                     };
 
+                    var pin = new Pin
+                    {
+                        Address = viewModel.Location.FormattedAddress,
+                        Label = viewModel.Location.Name,
+                        Type = PinType.SearchResult,
+                        Position = position
+                    };
+
+                    map.Pins.Add(pin);
+
                     MapView.Children.Add(map);
+
+                    // Add to contact list so the directions link is added with
+                    // the rest of the contact entries.
+                    viewModel.Location.contacts.Insert(0, new Contact
+                    {
+                        ContactData = viewModel.Location.FormattedAddress,
+                        ContactType = "Directions",
+                    });
                 }
                 catch (Exception ex)
                 {
@@ -111,7 +130,7 @@ namespace HelpSGF.Views
             // Address
             AddressLabel.Text = viewModel.Location.FormattedAddress;
 
-            if(viewModel.Location.contacts != null)
+            if (viewModel.Location.contacts != null)
             {
                 try
                 {
@@ -185,6 +204,41 @@ namespace HelpSGF.Views
                                     try
                                     {
                                         Device.OpenUri(new Uri(linkUrl));
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Console.WriteLine(ex.Message);
+                                    }
+                                })
+                            });
+                        }
+
+                        // This "contact type" is manually added when a map
+                        // is rendered. The ContactData is a string with the 
+                        // location address
+                        if(contactType == "Directions")
+                        {
+                            imageIcon = "directions.png";
+
+                            var address = contact.ContactData;
+                            description.Text = "Open in maps";
+
+                            description.GestureRecognizers.Add(new TapGestureRecognizer
+                            {
+                                Command = new Command(() => {
+                                    try
+                                    {
+                                        switch (Device.RuntimePlatform)
+                                        {
+                                            case Device.iOS:
+                                                Device.OpenUri(
+                                                  new Uri(string.Format("http://maps.apple.com/?q={0}", WebUtility.UrlEncode(address))));
+                                                break;
+                                            case Device.Android:
+                                                Device.OpenUri(
+                                                  new Uri(string.Format("geo:0,0?q={0}", WebUtility.UrlEncode(address))));
+                                                break;
+                                        }
                                     }
                                     catch (Exception ex)
                                     {

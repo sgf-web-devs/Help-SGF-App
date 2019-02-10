@@ -12,12 +12,6 @@
                 <StackLayout Padding="20, 15">
                     <Label FontSize="20" FontAttributes="Bold" Text="{Binding Location.Name}"></Label>
                     
-                    <!--<Label Margin="0, 5, 0, 0">
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                    </Label>-->
-                    
-                    <!--<WebView x:Name="DescriptionWebView" Margin="0, 5, 0, 0" WidthRequest="200" HeightRequest="200"/>-->
-                    
                     <htmlLabel:HtmlLabel Text="{Binding Location.Description}"/>
                         
                     
@@ -56,11 +50,6 @@
                         
                         <WebView x:Name="MapWebView" Grid.Row="0" IsVisible="false" />
                         <StackLayout x:Name="MapView"></StackLayout>
-                        <!--<maps:Map WidthRequest="320" HeightRequest="200"
-                            x:Name="MyMap"
-                            IsShowingUser="true"
-                            MapType="Hybrid"
-                        />-->
                     </Grid>
                 </StackLayout>
                 
