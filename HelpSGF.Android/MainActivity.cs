@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Support.V4.Content;
 using Android;
 using Android.Support.V4.App;
+using Plugin.Permissions;
 
 namespace HelpSGF.Droid
 {
@@ -28,7 +29,16 @@ namespace HelpSGF.Droid
             global::Xamarin.FormsMaps.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
+
+
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

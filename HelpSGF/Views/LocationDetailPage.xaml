@@ -40,6 +40,12 @@
                             </Grid.ColumnDefinitions>
                         </Grid>
                     </StackLayout>
+                    
+                    <Label FontSize="18" TextColor="#813C27" FontAttributes="Bold" Margin="0, 20, 0, 0" x:Name="CategoryDetailsLabel" IsVisible="false">
+                        Category Details
+                    </Label>
+                    
+                    <StackLayout x:Name="CategoryDetailsList" IsVisible="false"></StackLayout>
                 </StackLayout>
                 
                 <StackLayout>

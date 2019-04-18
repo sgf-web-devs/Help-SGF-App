@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    x:Class="HelpSGF.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="20, 0">
+            <inputLayout:SfTextInputLayout x:Name="EmailLayout" Hint="Email Address">
+                <Entry x:Name="Email" Text="" />
+            </inputLayout:SfTextInputLayout>
+            
+            <inputLayout:SfTextInputLayout x:Name="PasswordLayout" Hint="Password">
+                <Entry x:Name="Password" Text="" />
+            </inputLayout:SfTextInputLayout>
+            
+            <buttons:SfButton x:Name="LoginButton" Text="Login" BackgroundColor="#BDE0D9" TextColor="#000" Clicked="Login_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

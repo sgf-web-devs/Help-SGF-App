@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    x:Class="HelpSGF.Views.SendMessagePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <inputLayout:SfTextInputLayout x:Name="SubjectLayout" Hint="Subject">
+                <Entry x:Name="Subject" />
+            </inputLayout:SfTextInputLayout>
+            
+            <inputLayout:SfTextInputLayout x:Name="MessageLayout" Hint="Message">
+                   <Editor x:Name="Message" HeightRequest="100" />
+            </inputLayout:SfTextInputLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <buttons:SfButton x:Name="TakePhotoButton" Text="Take Photo" BackgroundColor="#BDE0D9" TextColor="#000" Clicked="TakePhoto_ClickedAsync"/>
+                <buttons:SfButton x:Name="SelectPhotoButton" Text="Select Photo" BackgroundColor="#BDE0D9" TextColor="#000" Clicked="PickPhoto_ClickedAsync"/>
+            </StackLayout>
+            
+            <Image x:Name="Image" IsVisible="false" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -76,6 +76,19 @@ namespace HelpSGF.Models
         {
             throw new NotImplementedException();
         }
+
+        public class Category
+        {
+            public string serviceType { get; set; }
+        }
+
+        public class CategoryDetail
+        {
+            public List<Category> category { get; set; }
+            public string description { get; set; }
+        }
+
+        public List<CategoryDetail> CategoryDetails { get; set; }
     }
 
     public class ServiceTypeDetail
@@ -88,10 +101,10 @@ namespace HelpSGF.Models
     {
         public string ServiceType { get; set; }
     }
+
     public class Contact
     {
         public string ContactType { get; set; }
         public string ContactData { get; set; }
     }
-
 }

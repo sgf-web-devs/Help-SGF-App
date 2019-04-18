@@ -245,6 +245,8 @@
     <BundleResource Include="Resources\categories_transportation%401x.png" />
     <BundleResource Include="Resources\categories_transportation%402x.png" />
     <BundleResource Include="Resources\categories_transportation%403x.png" />
+    <BundleResource Include="Resources\pen-square.png" />
+    <BundleResource Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

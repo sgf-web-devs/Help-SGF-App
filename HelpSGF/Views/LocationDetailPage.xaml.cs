@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HelpSGF.Models;
 using HelpSGF.Services;
 using HelpSGF.ViewModels;
+using LabelHtml.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -91,10 +92,10 @@ namespace HelpSGF.Views
                 }
             }
 
-            // Service List Grid
+            // Category List Grid
             try
             {
-                if (viewModel.Location.ServiceTypes != null)
+                if (viewModel.Location.ServiceTypes != null && !viewModel.Location.Categories.Any())
                 {
                     foreach (string service in viewModel.Location.ServiceTypes)
                     {
@@ -108,7 +109,7 @@ namespace HelpSGF.Views
                     }
                 }
 
-                if (viewModel.Location.Categories != null && viewModel.Location.Categories.Count > 0)
+                else if (viewModel.Location.Categories.Any())
                 {
                     // If new values are loaded, hide the old grid.
                     ServiceGrid.IsVisible = false;
@@ -117,15 +118,75 @@ namespace HelpSGF.Views
                     CategoriesLabel.IsVisible = true;
                     CategoriesGrid.IsVisible = true;
 
+                    var categories = new List<string>();
+
                     foreach (var category in viewModel.Location.Categories)
                     {
+                        if(categories.Contains(category.ServiceType))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            categories.Add(category.ServiceType);
+                        }
+
                         var column = categoryItemCount % 2 == 0 ? 0 : 1;
 
                         var label = new Label();
                         label.Text = "•  " + category.ServiceType;
+                        label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
                         CategoriesGrid.Children.Add(label, column, (int)Math.Floor((double)categoryItemCount / 2));
 
                         categoryItemCount++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            // Category Details List
+            try
+            {
+                if(viewModel.Location.CategoryDetails.Any())
+                {
+                    CategoryDetailsLabel.IsVisible = true;
+                    CategoryDetailsList.IsVisible = true;
+
+                    foreach (var categoryDetails in viewModel.Location.CategoryDetails)
+                    {
+                        var titles = new List<string>();
+
+                        foreach (var category in categoryDetails.category)
+                        {
+                            if (!titles.Contains(category.serviceType))
+                            {
+                                titles.Add(category.serviceType);
+                            }
+                        }
+
+                        var title = string.Join(", ", titles).Trim();
+                        var description = categoryDetails.description;
+
+
+                        var titleLabel = new Label()
+                        {
+                            FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label)),
+                            FontAttributes = FontAttributes.Bold,
+                            Margin = new Thickness(0, 20, 0, 0),
+                            Text = title
+                        };
+
+                        var htmlDescription = new HtmlLabel()
+                        {
+                            Text = description,
+                            FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label))
+                    };
+
+                        CategoryDetailsList.Children.Add(titleLabel);
+                        CategoryDetailsList.Children.Add(htmlDescription);
                     }
                 }
             }
