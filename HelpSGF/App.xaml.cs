@@ -13,6 +13,7 @@ namespace HelpSGF
         public App()
         {
             ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("A_KEY_GOES_HERE");
 
             InitializeComponent();
 

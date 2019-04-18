@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.doorjambs.Help_SGF">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1" package="com.doorjambs.Help_SGF" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
 	<application android:label="HelpSGF.Android" android:icon="@mipmap/ic_launcher_foreground">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="A_KEY_GOES_HERE" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
