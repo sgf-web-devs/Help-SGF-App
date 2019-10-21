@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.848062" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.851321-pre3" />  
     <PackageReference Include="Acr.UserDialogs" Version="7.0.35" />
     <PackageReference Include="PCLAppConfig" Version="1.0.1" />
     <PackageReference Include="Xam.Plugin.HtmlLabel" Version="3.0.2.2" />
