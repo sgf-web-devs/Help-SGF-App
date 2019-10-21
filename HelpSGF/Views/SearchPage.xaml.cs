@@ -37,8 +37,14 @@ namespace HelpSGF.Views
                 MainCategoryName = maincategory.Name
             };
 
-
-            Navigation.PushAsync(new CategoriesPage(categoriesViewModel));
+            if(categoriesViewModel.MainCategoryName.ToLower().Contains("food"))
+            {
+                Device.OpenUri(new Uri("http://cosmo.maps.arcgis.com/apps/webappviewer/index.html?id=7d901ada9b46499fa99254f08a343466"));
+            }
+            else
+            {
+                Navigation.PushAsync(new CategoriesPage(categoriesViewModel));
+            }
         }
 
         public SearchPage()
