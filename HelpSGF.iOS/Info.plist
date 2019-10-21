@@ -39,7 +39,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.9</string>
+	<string>1.1.12</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -57,5 +57,9 @@
 	<string>1</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Help SGF needs access to the calendar. This is a patch for now. Will be removed later.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Help SGF needs access to your location to help you find local resources</string>
 </dict>
 </plist>
